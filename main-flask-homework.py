@@ -22,7 +22,7 @@ def greeting():
 @app.route("/generate-users/")
 def generator():
     double_string = ""
-    amount = request.args.get('count', default = 100, type = int)
+    amount = request.args.get('count', default=100, type=int)
     for _ in range(int(amount)):
         double_string += f"<p>{fake.name()} " \
                          f"{''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(9))}" \
