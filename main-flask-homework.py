@@ -1,4 +1,5 @@
 import random, string
+import pandas as pd
 from flask import Flask
 from markupsafe import escape
 from faker import Faker
@@ -28,6 +29,11 @@ def generator(amount):
                          f"@gmail.com</p>"
 
     return double_string
+
+@app.route("/mean/")
+def calculated_csv():
+    data = pd.read_csv("hw.csv")
+    print(data.columns)
 
 
 if __name__ == '__main__':
